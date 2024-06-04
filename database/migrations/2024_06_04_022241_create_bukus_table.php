@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('cover_image');
-            $table->string('nama');
+            $table->string('name');
             $table->string('author');
             $table->string('description');
             $table->boolean('is_published')->default(true);
