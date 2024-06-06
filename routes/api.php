@@ -8,8 +8,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/buku', [bukucontroller::class, 'index']);
-Route::post('/buku', [bukucontroller::class, 'store']);
-Route::get('/buku/{buku}', [bukucontroller::class, 'show']);
-Route::put('/buku/{buku}', [bukucontroller::class, 'update']);
-Route::delete('/buku/{buku}', [bukucontroller::class, 'destroy']);
+Route::apiresource('buku', bukucontroller::class);
+
+Route::post('register', [AuthenticationController::class, 'register']);
+Route::post('login', [AuthenticationController::class, 'login']);
+Route::get('me', [AuthenticationController::class, 'me'])->middleware('auth:sanctum');
+Route::post('logout', [AuthenticationController::class, 'logout'])->middleware('auth:sanctum');
