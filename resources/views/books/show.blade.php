@@ -19,7 +19,7 @@
                             <img src="{{ asset('storage/' . $book->cover_image) }}" class="w-50 rounded">
                         </div>
                         <div class="text-right">
-                            <div class="badge badge-primary p-2">{{ $book->is_published ? 'Published' : 'Not Published' }}</div>
+                            <div class="badge badge-primary p-2">{{ $book ->is_published ? 'Published' : 'Not Published' }}</div>
                         </div>
                         <hr>
                         <h4>{{ $book->name }}</h4>
