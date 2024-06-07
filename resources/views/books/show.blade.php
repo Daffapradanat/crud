@@ -16,18 +16,18 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="{{ asset('storage/' . $bukus->cover_image) }}" class="w-50 rounded">
+                            <img src="{{ asset('storage/' . $book->cover_image) }}" class="w-50 rounded">
                         </div>
                         <div class="text-right">
-                            <div class="badge badge-primary p-2">{{ $bukus->is_published ? 'Published' : 'Not Published' }}</div>
+                            <div class="badge badge-primary p-2">{{ $book->is_published ? 'Published' : 'Not Published' }}</div>
                         </div>
                         <hr>
-                        <h4>{{ $bukus->name }}</h4>
+                        <h4>{{ $book->name }}</h4>
                         <p class="tmt-3">
-                            {!! $bukus->description !!}
+                            {!! $book->description !!}
                         </p>
                         <div class="text-right">
-                            <i> Author: {{ $bukus->author }}</i>
+                            <i> Author: {{ $book->author }}</i>
                         </div>
                     </div>
                 </div>

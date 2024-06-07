@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\bukucontroller;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,4 +22,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
 
-Route::resource('buku', bukucontroller::class);
+Route::resource('books', BookController::class);

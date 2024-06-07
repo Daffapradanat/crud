@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('buku.create') }}" class="btn btn-md btn-success mb-3">Tambah Buku</a>
+                        <a href="{{ route('books.create') }}" class="btn btn-md btn-success mb-3">Tambah book</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -30,22 +30,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($bukus as $buku)
+                                @forelse ($books as $book)
                                     <tr>
-                                        <td class="text-center">{{ $bukus->firstItem() + $loop->index }}</td>
+                                        <td class="text-center">{{ $books->firstItem() + $loop->index }}</td>
                                         <td class="text-center">
-                                            <img src="{{ asset('storage/' . $buku->cover_image) }}" class="rounded" style="width: 150px">
+                                            <img src="{{ asset('storage/' . $book->cover_image) }}" class="rounded" style="width: 150px">
                                         </td>
-                                        <td>{{ $buku->name }}</td>
-                                        <td>{{ $buku->author }}</td>
-                                        <td>{{ $buku->is_published ? 'Published' : 'Not Published' }}</td>
+                                        <td>{{ $book->name }}</td>
+                                        <td>{{ $book->author }}</td>
+                                        <td>{{ $book->is_published ? 'Published' : 'Not Published' }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('buku.show', $buku->id) }}" class="btn btn-sm btn-dark"><i class="fa fa-eye"></i></a>
+                                            <a href="{{ route('books.show', $book->id) }}" class="btn btn-sm btn-dark"><i class="fa fa-eye"></i></a>
 
-                                            <form method="POST" action="{{ route('buku.update', $buku->id) }}" enctype="multipart/form-data">
+                                            <form method="POST" action="{{ route('books.update', $book->id) }}" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
-                                            <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('books.edit', $book->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil-alt"></i></a>
 
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                                 @csrf
@@ -57,13 +57,13 @@
                                 @empty
                                     <tr class="text-center">
                                         <td colspan="7" class="alert alert-danger">
-                                            Data Buku Belum Tersedia.
+                                            Data book Belum Tersedia.
                                         </td>
                                     </tr>
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $bukus->links() }}
+                        {{ $books->links() }}
                     </div>
                 </div>
             </div>

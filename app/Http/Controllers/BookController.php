@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Buku;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class bukucontroller extends Controller
+class Bookcontroller extends Controller
 {
     public function index()
     {
-        $bukus = Buku::paginate(10);
+        $books = Book::paginate(10);
 
-        return view('buku.index', compact('bukus'));
+        return view('books.index', compact('books'));
     }
 
     public function create()
     {
-        return view('buku.create');
+        return view('books.create');
     }
 
     public function store(Request $request)
@@ -31,19 +31,23 @@ class bukucontroller extends Controller
         ]);
 
         $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
-        buku::create($validatedData);
+        Book::create($validatedData);
 
-        return to_route('buku.index')->with('success', 'Buku created successfully');
+        return to_route('books.index')->with('success', 'Book created successfully');
     }
 
-    public function show(Buku $bukus)
+    public function show($id)
     {
-        return view('buku.show', compact('bukus'));
+        $book = Book::find($id);
+
+        return view('books.show', compact('book'));
     }
 
-    public function edit($bukus)
+    public function edit($id)
     {
-        return view('buku.edit', compact('bukus'));
+        $book = Book::find($id);
+
+        return view('books.edit', compact('book'));
     }
 
     public function update(Request $request, $id)
@@ -56,27 +60,28 @@ class bukucontroller extends Controller
             'is_published' => ['required', 'boolean'],
         ]);
 
-        $bukus = Buku::find($id);
+        $book = Book::find($id);
 
         if ($request->hasFile('cover_image')) {
-            Storage::delete($bukus->cover_image);
+
+            Storage::delete('public/'.$book->cover_image);
 
             $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
         }
 
-        $bukus->update($validatedData);
+        $book->update($validatedData);
 
-        return to_route('buku.index')->with('success', 'Buku updated successfully');
+        return to_route('books.index')->with('success', 'Book updated successfully');
     }
 
     public function destroy($id)
     {
-        $bukus = Buku::find($id);
+        $book = Book::find($id);
 
-        Storage::delete('public/'.$bukus->cover_image);
+        Storage::delete('public/'.$book->cover_image);
 
-        $bukus->delete();
+        $book->delete();
 
-        return to_route('buku.index')->with('success', 'Buku deleted successfully');
+        return back()->with('success', 'Book deleted successfully');
     }
 }

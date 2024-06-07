@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perpustakaan</title>
+    <title>books Data</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -17,12 +17,13 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Tambahkan Buku
+                        Edit books
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('buku.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('books.update', $book->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
 
                             <div class="form-group">
                                 <label for="cover_image" class="font-weight-bold">Cover Image</label>
@@ -40,7 +41,7 @@
                             <div class="form-group">
                                 <label for="name" class="font-weight-bold">Name</label>
                                 <div>
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $book->name) }}" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -53,7 +54,7 @@
                             <div class="form-group">
                                 <label for="author" class="font-weight-bold">Author</label>
                                 <div>
-                                    <input id="author" type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="{{ old('author') }}" autocomplete="author">
+                                    <input id="author" type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="{{ old('author', $book->author) }}" autocomplete="author">
 
                                     @error('author')
                                         <span class="invalid-feedback" role="alert">
@@ -66,7 +67,7 @@
                             <div class="form-group">
                                 <label for="description" class="font-weight-bold">Description</label>
                                 <div>
-                                    <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description">{{ old('description') }}</textarea>
+                                    <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description">{!! old('description', $book->description) !!}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -80,8 +81,8 @@
                                 <label for="is_published" class="font-weight-bold">Status</label>
                                 <div>
                                     <select id="is_published" class="form-control" name="is_published">
-                                        <option value="1">Published</option>
-                                        <option value="0">Not Published</option>
+                                        <option value="1" @selected(old('is_published', $book->is_published == 1))>Published</option>
+                                        <option value="0" @selected(old('is_published', $book->is_published == 0))>Not Published</option>
                                     </select>
                                 </div>
                             </div>
@@ -89,7 +90,7 @@
                             <div class="form-group mb-0">
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
-                                        Submit
+                                        Update books
                                     </button>
                                 </div>
                             </div>
@@ -108,7 +109,6 @@
     <script>
         CKEDITOR.replace('description');
     </script>
-
 </body>
 
 </html>
