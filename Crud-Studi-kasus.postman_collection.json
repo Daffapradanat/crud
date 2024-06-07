@@ -50,7 +50,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/buku",
+							"raw": "http://127.0.0.1:8000/api/books",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -61,7 +61,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"buku"
+								"books"
 							]
 						}
 					},
@@ -80,7 +80,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/buku",
+							"raw": "http://127.0.0.1:8000/api/books",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -91,7 +91,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"buku"
+								"books"
 							]
 						}
 					},
@@ -103,7 +103,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/buku/7",
+							"raw": "http://127.0.0.1:8000/api/books/3",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -114,8 +114,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"buku",
-								"7"
+								"books",
+								"3"
 							]
 						}
 					},
@@ -127,7 +127,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/buku/9",
+							"raw": "http://127.0.0.1:8000/api/books/9",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -138,7 +138,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"buku",
+								"books",
 								"9"
 							]
 						}
@@ -187,7 +187,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/buku/7",
+							"raw": "http://127.0.0.1:8000/api/books/7",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -198,7 +198,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"buku",
+								"books",
 								"7"
 							]
 						}
@@ -292,6 +292,39 @@
 					"response": []
 				},
 				{
+					"name": "Logout User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6dReqGoelCN1m98DxNBJXqh5OkgJxanNxvEjVVh780795414",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Current User",
 					"request": {
 						"auth": {
@@ -319,39 +352,6 @@
 							"path": [
 								"api",
 								"me"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout User",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "OcUDZvFvjUE0yTnkXsjNVl63aF5xjbZQnsy4fEJIfceacef8",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/logout",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"logout"
 							]
 						}
 					},
