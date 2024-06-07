@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\models\Buku;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class bukucontroller extends Controller
+class BookController extends Controller
 {
     public function index()
     {
-        $buku = Buku::paginate();
+        $books = Book::paginate();
 
-        return response()->json($buku);
+        return response()->json($books);
     }
 
     public function store(Request $request)
@@ -27,17 +27,17 @@ class bukucontroller extends Controller
         ]);
 
         $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
-        buku::create($validatedData);
+        Book::create($validatedData);
 
-        return response()->json(['success' => 'Buku created successfully']);
+        return response()->json(['success' => 'Book created successfully']);
     }
 
-    public function show(Buku $buku)
+    public function show(Book $book)
     {
-        return response()->json($buku);
+        return response()->json($book);
     }
 
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request, Book $book)
     {
         $validatedData = $request->validate([
             'cover_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
@@ -48,22 +48,20 @@ class bukucontroller extends Controller
         ]);
 
         if ($request->hasFile('cover_image')) {
-            Storage::delete('public/'.$buku->cover_image);
-
+            Storage::delete('public/'.$book->cover_image);
             $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
         }
 
-        $buku->update($validatedData);
+        $book->update($validatedData);
 
-        return response()->json(['success' => 'buku updated successfully']);
+        return response()->json(['success' => 'Book updated successfully']);
     }
 
-    public function destroy(Buku $buku)
+    public function destroy(Book $book)
     {
-        Storage::delete('public/'.$buku->cover_image);
+        Storage::delete('public/'.$book->cover_image);
+        $book->delete();
 
-        $buku->delete();
-
-        return response()->json(['success' => 'buku deleted successfully']);
+        return response()->json(['success' => 'Book deleted successfully']);
     }
 }
