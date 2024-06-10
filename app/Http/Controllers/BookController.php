@@ -64,8 +64,7 @@ class Bookcontroller extends Controller
 
         if ($request->hasFile('cover_image')) {
 
-            Storage::delete('public/'.$book->cover_image);
-
+            Storage::delete($book->cover_image);
             $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
         }
 

@@ -41,13 +41,9 @@
                                         <td>{{ $book->is_published ? 'Published' : 'Not Published' }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('books.show', $book->id) }}" class="btn btn-sm btn-dark"><i class="fa fa-eye"></i></a>
-
-                                            <form method="POST" action="{{ route('books.update', $book->id) }}" enctype="multipart/form-data">
-                                                @csrf
-                                                @method('PUT')
                                             <a href="{{ route('books.edit', $book->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil-alt"></i></a>
 
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('books.destroy', $book->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>

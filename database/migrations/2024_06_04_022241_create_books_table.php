@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('cover_image');
             $table->string('name');
             $table->string('author');
-            $table->string('description');
+            $table->text('description');
             $table->boolean('is_published')->default(true);
 
             $table->timestamps();
