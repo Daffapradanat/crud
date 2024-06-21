@@ -25,11 +25,11 @@
 								{
 									"key": "cover_image",
 									"type": "file",
-									"src": "postman-cloud:///1ef22459-c8e8-4b50-b636-d126a00f9eef"
+									"src": "postman-cloud:///1ef24735-cea9-4090-87f5-89cd32c45eb9"
 								},
 								{
 									"key": "name",
-									"value": "Shadow",
+									"value": "Filosofi Stoikisme",
 									"type": "text"
 								},
 								{
@@ -39,7 +39,7 @@
 								},
 								{
 									"key": "description",
-									"value": "Tidak diketahui",
+									"value": "Memperlajari filosofi yunani yang sangat terkenal dan populer yang bisa membuat seseorang menjadi orang berbeda dengan menerapkan filosofi ini",
 									"type": "text"
 								},
 								{
@@ -103,7 +103,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/books/3",
+							"raw": "http://127.0.0.1:8000/api/books/6",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -115,7 +115,7 @@
 							"path": [
 								"api",
 								"books",
-								"3"
+								"6"
 							]
 						}
 					},
@@ -161,33 +161,33 @@
 								{
 									"key": "cover_image",
 									"type": "file",
-									"src": "postman-cloud:///1ef224d7-a788-4680-926f-5c994560a49c",
+									"src": "postman-cloud:///1ef24735-cea9-4090-87f5-89cd32c45eb9",
 									"disabled": true
 								},
 								{
 									"key": "name",
-									"value": "Yaksa",
+									"value": "Filosofi Stoikisme",
 									"type": "text"
 								},
 								{
 									"key": "author",
-									"value": "Erizka",
+									"value": "Zeno Yunani",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "Tidak diketahui",
+									"value": "Memperlajari filosofi yunani yang sangat terkenal dan populer yang bisa membuat seseorang menjadi orang berbeda dengan menerapkan filosofi ini",
 									"type": "text"
 								},
 								{
 									"key": "is_published",
-									"value": "0",
+									"value": "1",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/books/7",
+							"raw": "http://127.0.0.1:8000/api/books/5",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -199,7 +199,7 @@
 							"path": [
 								"api",
 								"books",
-								"7"
+								"5"
 							]
 						}
 					},
@@ -220,17 +220,17 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "admin",
+									"value": "Shaldy",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "Test@gmail.com",
+									"value": "Shaldyalfara@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Bambang123456",
+									"value": "123456",
 									"type": "text"
 								}
 							]
@@ -263,12 +263,12 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "Test12345@gmail.com",
+									"value": "Shaldyalfara@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Bambang123456",
+									"value": "123456",
 									"type": "text"
 								}
 							]
@@ -299,7 +299,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "6dReqGoelCN1m98DxNBJXqh5OkgJxanNxvEjVVh780795414",
+									"value": "1|WRll67TlOgTLK1qQ6p2Ne3wLg9FZ6mcw9BbZTYCF115e5be8",
 									"type": "string"
 								}
 							]
@@ -332,7 +332,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "OcUDZvFvjUE0yTnkXsjNVl63aF5xjbZQnsy4fEJIfceacef8",
+									"value": "2|23HkuV8OTX6WgRCS54C3oIOLXo3l4d0U2xrk1QSo7c71994c",
 									"type": "string"
 								}
 							]
