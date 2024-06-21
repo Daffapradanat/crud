@@ -33,7 +33,7 @@ class Bookcontroller extends Controller
         $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
         Book::create($validatedData);
 
-        return to_route('books.index')->with('success', 'Book created successfully');
+        return redirect()->route('books.index')->with('success', 'Book created successfully');
     }
 
     public function show($id)
@@ -63,22 +63,19 @@ class Bookcontroller extends Controller
         $book = Book::find($id);
 
         if ($request->hasFile('cover_image')) {
-
-            Storage::delete($book->cover_image);
+            Storage::delete('public/'.$book->cover_image);
             $validatedData['cover_image'] = $request->file('cover_image')->store('images', 'public');
         }
 
         $book->update($validatedData);
 
-        return to_route('books.index')->with('success', 'Book updated successfully');
+        return redirect()->route('books.index')->with('success', 'Book updated successfully');
     }
 
     public function destroy($id)
     {
         $book = Book::find($id);
-
         Storage::delete('public/'.$book->cover_image);
-
         $book->delete();
 
         return back()->with('success', 'Book deleted successfully');
