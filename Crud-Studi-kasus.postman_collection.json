@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "c640211b-60e6-4871-a143-6389302bce5a",
+		"name": "Crud-Studi-kasus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35986905"
+	},
+	"item": [
+		{
+			"name": "Buku",
+			"item": [
+				{
+					"name": "Create Buku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1ef3296f-7674-4c40-8620-0eeffa893288"
+								},
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Rublox",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "kdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdAkdeokdA",
+									"type": "text"
+								},
+								{
+									"key": "is_published",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Buku",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1ef22459-c8e8-4b50-b636-d126a00f9eef",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Testa",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "WIAK",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "tefr",
+									"type": "text"
+								},
+								{
+									"key": "is_published",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/18",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Buku",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/18",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Buku",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kowi",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Kowi@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Kowi@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|mDS7lOZPmThAalUIaO6hRI1LJutgUCRSgL77wMM296422552",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|mDS7lOZPmThAalUIaO6hRI1LJutgUCRSgL77wMM296422552",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
